@@ -10,3 +10,4 @@
 /admin/language
 /admin/view/image
 /admin/view/javascript
+!/catalog/view/javascript/main.js
