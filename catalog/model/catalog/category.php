@@ -66,4 +66,14 @@ class ModelCatalogCategory extends Model {
 
 		return $query->row['total'];
 	}
+
+	public function getCategoryAttr()
+    {
+        $data[]['brand'] = $this->db->query('SELECT * FROM '. DB_PREFIX . 'manufacturer');
+        $data[]['size'] = $this->db->query('SELECT * FROM '. DB_PREFIX . 'filter_description WHERE filter_group_id = 1');
+        $data[]['price'] = $this->db->query('SELECT * FROM '. DB_PREFIX . 'filter_description WHERE filter_group_id = 2');
+
+
+        return $data;
+    }
 }

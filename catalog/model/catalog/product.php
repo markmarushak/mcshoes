@@ -76,7 +76,23 @@ class ModelCatalogProduct extends Model {
 			$sql .= " FROM " . DB_PREFIX . "product p";
 		}
 
-		$sql .= " LEFT JOIN " . DB_PREFIX . "product_description pd ON (p.product_id = pd.product_id) LEFT JOIN " . DB_PREFIX . "product_to_store p2s ON (p.product_id = p2s.product_id) WHERE pd.language_id = '" . (int)$this->config->get('config_language_id') . "' AND p.status = '1' AND p.date_available <= NOW() AND p2s.store_id = '" . (int)$this->config->get('config_store_id') . "'";
+
+		$sql .= " LEFT JOIN " . DB_PREFIX . "product_description pd ON (p.product_id = pd.product_id) LEFT JOIN " . DB_PREFIX . "product_to_store p2s ON (p.product_id = p2s.product_id) LEFT JOIN oc_product_attribute p2a ON(p.product_id = p2a.product_id)  WHERE pd.language_id = '" . (int)$this->config->get('config_language_id') . "' AND p.status = '1' AND p.date_available <= NOW() AND p2s.store_id = '" . (int)$this->config->get('config_store_id') . "'";
+
+        if(!empty($data['brand'])) {
+            $sql .= " AND p2a.text = ".'"'.$data['brand'].'"';
+
+        }
+        if(!empty($data['size'])){
+          $sql .= " AND p2a.text =". $data['size'];
+        }
+
+        if(!empty($data['min_price'])){
+          $sql .= " AND p.price >= " . $data['min_price'] ;
+        }
+        if(!empty($data['max_price'])){
+          $sql .= " AND p.price <= " . $data['max_price'] ;
+        }
 
 		if (!empty($data['filter_category_id'])) {
 			if (!empty($data['filter_sub_category'])) {
@@ -153,6 +169,8 @@ class ModelCatalogProduct extends Model {
 		if (!empty($data['filter_manufacturer_id'])) {
 			$sql .= " AND p.manufacturer_id = '" . (int)$data['filter_manufacturer_id'] . "'";
 		}
+
+
 
 		$sql .= " GROUP BY p.product_id";
 
@@ -419,7 +437,7 @@ class ModelCatalogProduct extends Model {
 
 		if (!empty($data['filter_category_id'])) {
 			if (!empty($data['filter_sub_category'])) {
-				$sql .= " FROM " . DB_PREFIX . "category_path cp LEFT JOIN " . DB_PREFIX . "product_to_category p2c ON (cp.category_id = p2c.category_id)";
+				$sql .= " FROM " . DB_PREFIX . "category_path cp LEFT JOIN " . DB_PREFIX . "product_to_category p2c ON (cp.category_id = p2c.category_id) ";
 			} else {
 				$sql .= " FROM " . DB_PREFIX . "product_to_category p2c";
 			}
@@ -433,7 +451,7 @@ class ModelCatalogProduct extends Model {
 			$sql .= " FROM " . DB_PREFIX . "product p";
 		}
 
-		$sql .= " LEFT JOIN " . DB_PREFIX . "product_description pd ON (p.product_id = pd.product_id) LEFT JOIN " . DB_PREFIX . "product_to_store p2s ON (p.product_id = p2s.product_id) WHERE pd.language_id = '" . (int)$this->config->get('config_language_id') . "' AND p.status = '1' AND p.date_available <= NOW() AND p2s.store_id = '" . (int)$this->config->get('config_store_id') . "'";
+		$sql .= " LEFT JOIN " . DB_PREFIX . "product_description pd ON (p.product_id = pd.product_id) LEFT JOIN " . DB_PREFIX . "product_to_store p2s ON (p.product_id = p2s.product_id) LEFT JOIN  " . DB_PREFIX . "product_attribute p2a ON (p.product_id = p2a.product_id) WHERE pd.language_id = '" . (int)$this->config->get('config_language_id') . "' AND p.status = '1' AND p.date_available <= NOW() AND p2s.store_id = '" . (int)$this->config->get('config_store_id') . "'";
 
 		if (!empty($data['filter_category_id'])) {
 			if (!empty($data['filter_sub_category'])) {
@@ -506,6 +524,21 @@ class ModelCatalogProduct extends Model {
 
 			$sql .= ")";
 		}
+
+        if(!empty($data['brand'])) {
+            $sql .= " AND p2a.text = ".'"'.$data['brand'].'"';
+
+        }
+        if(!empty($data['size'])){
+            $sql .= " AND p2a.text =". $data['size'];
+        }
+
+        if(!empty($data['min_price'])){
+            $sql .= " AND p.price >= " . $data['min_price'] ;
+        }
+        if(!empty($data['max_price'])){
+            $sql .= " AND p.price <= " . $data['max_price'] ;
+        }
 
 		if (!empty($data['filter_manufacturer_id'])) {
 			$sql .= " AND p.manufacturer_id = '" . (int)$data['filter_manufacturer_id'] . "'";

@@ -8,7 +8,31 @@
     <?php } else { ?>
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
-    <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?><?php echo $content_bottom; ?></div>
+    <div id="content" class="<?php echo $class; ?>">
+      <? if($categories) :?>
+      <div class="group_category">
+        <? foreach($categories as $category) :?>
+
+        <div class="category">
+          <a href="<?= $category['href']?>">
+            <img src="<?= $category['img']?>" alt="<?= $category['name']?>">
+            <span class="category_name">
+                <span>
+                    <?= $category['name']?>
+                </span>
+              </span>
+          </a>
+        </div>
+
+        <? endforeach;?>
+      </div>
+      <? endif; ?>
+      <?php echo $content_top; ?>
+
+
+
+      <?php echo $content_bottom; ?>
+    </div>
     <?php echo $column_right; ?></div>
 </div>
 <?php echo $footer; ?>

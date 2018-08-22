@@ -45,31 +45,29 @@ class ControllerExtensionModuleFilter extends Controller {
 			$this->load->model('catalog/product');
 
 			$data['filter_groups'] = array();
-
-			$filter_groups = $this->model_catalog_category->getCategoryFilters($category_id);
+			$filter_groups = $this->model_catalog_category->getCategoryAttr();
 
 			if ($filter_groups) {
 				foreach ($filter_groups as $filter_group) {
-					$childen_data = array();
 
-					foreach ($filter_group['filter'] as $filter) {
-						$filter_data = array(
-							'filter_category_id' => $category_id,
-							'filter_filter'      => $filter['filter_id']
-						);
+					foreach ($filter_group as $filter => $value) {
+                        $data['name_filter'][$filter] = array();
+                        $fil_name = $filter;
+                        $fil_val = $value;
+                    }
+                    foreach ($fil_val as $fil)
+                    {
+                        if (is_array($fil))
+                            foreach ($fil as $f) {
+                                if (is_array($f)) {
+                                    $data['name_filter'][$fil_name][] = $f;
+                                }
+                            }
+                    }
 
-						$childen_data[] = array(
-							'filter_id' => $filter['filter_id'],
-							'name'      => $filter['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : '')
-						);
-					}
-
-					$data['filter_groups'][] = array(
-						'filter_group_id' => $filter_group['filter_group_id'],
-						'name'            => $filter_group['name'],
-						'filter'          => $childen_data
-					);
 				}
+				$data['get'] = $_GET;
+
 
 				return $this->load->view('extension/module/filter', $data);
 			}

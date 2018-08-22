@@ -9,5 +9,6 @@
 /admin/config.php
 /admin/language
 /admin/view/image
+!main.js
 /admin/view/javascript
-!/catalog/view/javascript/main.js
+

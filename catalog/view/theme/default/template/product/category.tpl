@@ -17,7 +17,10 @@
       <h1><?php echo $heading_title; ?></h1>
       <?php if ($thumb || $description) { ?>
       <div class="row">
-        <?php if ($thumb) { ?>
+        <div class="col-xs-12">
+          <button class="mobile-filter"><i class="fa fa-cog" aria-hidden="true"></i> Фильтр</button>
+        </div>
+        <?php if (!$thumb) { ?>
         <div class="col-sm-2"><img src="<?php echo $thumb; ?>" alt="<?php echo $heading_title; ?>" title="<?php echo $heading_title; ?>" class="img-thumbnail" /></div>
         <?php } ?>
         <?php if ($description) { ?>
@@ -60,11 +63,11 @@
             <button type="button" id="grid-view" class="btn btn-default" data-toggle="tooltip" title="<?php echo $button_grid; ?>"><i class="fa fa-th"></i></button>
           </div>
         </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="form-group">
-            <a href="<?php echo $compare; ?>" id="compare-total" class="btn btn-link"><?php echo $text_compare; ?></a>
-          </div>
-        </div>
+        <!--<div class="col-md-3 col-sm-6">-->
+          <!--<div class="form-group">-->
+            <!--<a href="<?php echo $compare; ?>" id="compare-total" class="btn btn-link"><?php echo $text_compare; ?></a>-->
+          <!--</div>-->
+        <!--</div>-->
         <div class="col-md-4 col-xs-6">
           <div class="form-group input-group input-group-sm">
             <label class="input-group-addon" for="input-sort"><?php echo $text_sort; ?></label>
@@ -102,7 +105,7 @@
             <div>
               <div class="caption">
                 <h4><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></h4>
-                <p><?php echo $product['description']; ?></p>
+                <!-- <p><?php echo $product['description']; ?></p> -->
                 <?php if ($product['price']) { ?>
                 <p class="price">
                   <?php if (!$product['special']) { ?>
@@ -115,6 +118,15 @@
                   <?php } ?>
                 </p>
                 <?php } ?>
+
+                 <!--<?php foreach($product['attr'] as $atr) : ?>-->
+                   <!--<?php foreach($atr['attribute'] as $atrs) : ?>-->
+                    <!--<div><?= $atrs['name'];?>-->
+                      <!-- - -->
+                      <!--<?= $atrs['text'];?></div>-->
+                  <!--<?php endforeach;?>-->
+                <!--<?php endforeach;?>-->
+
                 <?php if ($product['rating']) { ?>
                 <div class="rating">
                   <?php for ($i = 1; $i <= 5; $i++) { ?>
