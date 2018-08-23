@@ -13,3 +13,4 @@
 /admin/view/javascript
 
 .gitignore
+*.gitignore
