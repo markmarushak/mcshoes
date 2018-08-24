@@ -1,11 +1,8 @@
 /system
 /image
 /.idea
-/catalog/view/javascript
 /catalog/view/theme/default/image
 /admin/view/image
-!main.js
-/admin/view/javascript
 /yes
 /yes.pub
 /config
