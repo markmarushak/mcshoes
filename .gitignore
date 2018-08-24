@@ -8,3 +8,11 @@
 /admin/view/image
 !main.js
 /admin/view/javascript
+/.htaccess
+/config.php
+/index.php
+/php.ini
+/robots.txt
+/admin/php.ini
+/admin/config.php
+/admin/index.php
