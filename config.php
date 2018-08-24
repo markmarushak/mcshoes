@@ -1,9 +1,9 @@
 <?php
 // HTTP
-define('HTTP_SERVER', 'http://mcshoes.com.ua');
+define('HTTP_SERVER', 'http://mcshoes.com.ua/');
 
 // HTTPS
-define('HTTPS_SERVER', 'https://mcshoes.com.ua');
+define('HTTPS_SERVER', 'https://mcshoes.com.ua/');
 
 // DIR
 define('DIR_APPLICATION', '/home/mcshoesc/public_html/catalog/');
