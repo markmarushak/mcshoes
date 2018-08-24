@@ -10,5 +10,7 @@
 /admin/view/javascript
 /yes
 /yes.pub
-
-
+/config.php
+/index.php
+/admin/config.php
+/admin/index.php
