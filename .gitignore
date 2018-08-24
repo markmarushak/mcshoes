@@ -4,9 +4,6 @@
 /catalog/language
 /catalog/view/javascript
 /catalog/view/theme/default/image
-/admin/index.php
-/admin/php.ini
-/admin/config.php
 /admin/language
 /admin/view/image
 !main.js
