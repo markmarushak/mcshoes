@@ -8,24 +8,24 @@ define('HTTPS_SERVER', 'https://mcshoes.com.ua/admin/');
 define('HTTPS_CATALOG', 'https://mcshoes.com.ua/');
 
 // DIR
-define('DIR_APPLICATION', 'http://mcshoes.com.ua/admin/');
-define('DIR_SYSTEM', 'http://mcshoes.com.ua/system/');
-define('DIR_IMAGE', 'http://mcshoes.com.ua/image/');
-define('DIR_LANGUAGE', 'http://mcshoes.com.ua/admin/language/');
-define('DIR_TEMPLATE', 'http://mcshoes.com.ua/admin/view/template/');
-define('DIR_CONFIG', 'http://mcshoes.com.ua/system/config/');
-define('DIR_CACHE', 'http://mcshoes.com.ua/system/storage/cache/');
-define('DIR_DOWNLOAD', 'http://mcshoes.com.ua/system/storage/download/');
-define('DIR_LOGS', 'http://mcshoes.com.ua/system/storage/logs/');
-define('DIR_MODIFICATION', 'http://mcshoes.com.ua/system/storage/modification/');
-define('DIR_UPLOAD', 'http://mcshoes.com.ua/system/storage/upload/');
-define('DIR_CATALOG', 'http://mcshoes.com.ua/catalog/');
+define('DIR_APPLICATION', '/home/mcshoesc/public_html/admin/');
+define('DIR_SYSTEM', '/home/mcshoesc/public_html/system/');
+define('DIR_IMAGE', '/home/mcshoesc/public_html/image/');
+define('DIR_LANGUAGE', '/home/mcshoesc/public_html/admin/language/');
+define('DIR_TEMPLATE', '/home/mcshoesc/public_html/admin/view/template/');
+define('DIR_CONFIG', '/home/mcshoesc/public_html/system/config/');
+define('DIR_CACHE', '/home/mcshoesc/public_html/system/storage/cache/');
+define('DIR_DOWNLOAD', '/home/mcshoesc/public_html/system/storage/download/');
+define('DIR_LOGS', '/home/mcshoesc/public_html/system/storage/logs/');
+define('DIR_MODIFICATION', '/home/mcshoesc/public_html/system/storage/modification/');
+define('DIR_UPLOAD', '/home/mcshoesc/public_html/system/storage/upload/');
+define('DIR_CATALOG', '/home/mcshoesc/public_html/catalog/');
 
 // DB
 define('DB_DRIVER', 'mysqli');
 define('DB_HOSTNAME', '193.169.188.252');
 define('DB_USERNAME', 'mcshoesc_admin');
-define('DB_PASSWORD', '71D9RMM51IIJ');
+define('DB_PASSWORD', 'ubXQjDkq38If');
 define('DB_DATABASE', 'mcshoesc_shop');
 define('DB_PORT', '3306');
 define('DB_PREFIX', 'oc_');
