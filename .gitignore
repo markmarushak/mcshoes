@@ -1,4 +1,4 @@
-
+/system
 /image
 /.idea
 /catalog/language
@@ -8,9 +8,9 @@
 /admin/view/image
 !main.js
 /admin/view/javascript
-yes
-yes.pub
-config
-index
+/yes
+/yes.pub
+/config
+/index
 /admin/config.php
 /admin/index.php
