@@ -11,6 +11,3 @@
 /admin/view/image
 !main.js
 /admin/view/javascript
-
-.gitignore
-*.gitignore
