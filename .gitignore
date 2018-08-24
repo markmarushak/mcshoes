@@ -8,9 +8,9 @@
 /admin/view/image
 !main.js
 /admin/view/javascript
-/yes
-/yes.pub
-/config.php
-/index.php
-/admin/config.php
-/admin/index.php
+yes
+yes.pub
+config.php
+index.php
+admin/config.php
+admin/index.php
