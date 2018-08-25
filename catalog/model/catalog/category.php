@@ -71,9 +71,9 @@ class ModelCatalogCategory extends Model {
     {
         $data[]['brand'] = $this->db->query('SELECT * FROM '. DB_PREFIX . 'manufacturer');
 
-        $data[]['size'] = $this->db->query('SELECT * FROM '. DB_PREFIX . 'filter_group_description fgd LEFT JOIN '. DB_PREFIX .'filter_decription fd ON(fgd.filter_group_id = fd.filter_group_id) WHERE fgd.name = "размер"');
+        $data[]['size'] = $this->db->query('SELECT * FROM '. DB_PREFIX . 'filter_group_description fgd LEFT JOIN '. DB_PREFIX .'filter_description fd ON(fgd.filter_group_id = fd.filter_group_id) WHERE fgd.name = "размер"');
 
-        $data[]['price'] = $this->db->query('SELECT * FROM '. DB_PREFIX . 'filter_group_description fgd LEFT JOIN '. DB_PREFIX .'filter_decription fd ON(fgd.filter_group_id = fd.filter_group_id) WHERE fgd.name = "цена"');
+        $data[]['price'] = $this->db->query('SELECT * FROM '. DB_PREFIX . 'filter_group_description fgd LEFT JOIN '. DB_PREFIX .'filter_description fd ON(fgd.filter_group_id = fd.filter_group_id) WHERE fgd.name = "цена"');
 
 
         return $data;
