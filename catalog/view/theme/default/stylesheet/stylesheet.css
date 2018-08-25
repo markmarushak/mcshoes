@@ -79,7 +79,7 @@ div.required .control-label:before {
 }
 /* top */
 #top {
-	/* background-color: #EEEEEE; */
+	background-color: #009688;
 	border-bottom: 1px solid #e2e2e2;
 	/* padding: 4px 0px 3px 0; */
 	/* margin: 0 0 20px 0; */
@@ -101,8 +101,8 @@ div.required .control-label:before {
 	background-repeat: repeat-x;
 }
 #top .btn-link, #top-links li, #top-links a {
-	color: #888;
-	text-shadow: 0 1px 0 #FFF;
+	color: #fff;
+	/* text-shadow: 0 1px 0 #FFF; */
 	text-decoration: none;
 }
 #top .btn-link:hover, #top-links a:hover {
@@ -126,7 +126,7 @@ div.required .control-label:before {
 }
 /* logo */
 #logo {
-	margin: 0 0 10px 0;
+	margin: 40px 0;
 }
 /* search */
 #main-nav-menu {
@@ -139,18 +139,24 @@ div.required .control-label:before {
 	padding: 0 20px;
 	display: block;
 	border:  none;
-	background: #f9f9f9;
+	background: #f9f9f900;
 	border-radius:  0;
 	box-shadow:  none;
+	color: #fff;
+	font-size: 14px;
+}
+#search .input-lg::placeholder {
+	color: #fff;
+	text-transform: uppercase;
+	font-size:18px;
 }
 #search .btn-lg {
 	font-size: 18px;
 	line-height: 24px;
 	left:  -44px;
 	background: none;
-	text-shadow: 0 0 0 #FFF;
+	text-shadow: 0 0 0 #fff0;
 	box-shadow:  none;
-	outline:  none;
 	border: none;
 }
 /* cart */
@@ -422,7 +428,7 @@ footer h5 {
 	font-size: 15px;
 }
 .btn-default {
-	color: #777;
+	color: #fff;
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
 	background-color: #e7e7e7;
 	background-image: linear-gradient(to bottom, #eeeeee, #dddddd);
@@ -567,11 +573,10 @@ footer h5 {
 	font-size: 18px;
 	border-bottom: 1px solid;
 	display: inline-block;
-	padding:  0 30px;
 	margin-bottom:  3px;
 }
 .product-thumb .caption {
-	padding: 20px 20px;
+	padding: 20px 0;
 	text-align: center;
 	position: relative;
 	width:  100%;
