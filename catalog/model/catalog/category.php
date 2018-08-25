@@ -70,7 +70,9 @@ class ModelCatalogCategory extends Model {
 	public function getCategoryAttr()
     {
         $data[]['brand'] = $this->db->query('SELECT * FROM '. DB_PREFIX . 'manufacturer');
+
         $data[]['size'] = $this->db->query('SELECT * FROM '. DB_PREFIX . 'filter_group_description WHERE name = размер');
+        
         $data[]['price'] = $this->db->query('SELECT * FROM '. DB_PREFIX . 'filter_group_description WHERE name = цена');
 
 
