@@ -47,11 +47,6 @@
 <?php } ?>
 </head>
 <body class="<?php echo $class; ?>">
-<h1 style="position: absolute;opacity: 0;"><?php echo $title;  ?></title></h1>
-<h2 style="position: absolute;opacity: 0;"><?php echo $title;  ?></title></h2>
-<h3 style="position: absolute;opacity: 0;"><?php echo $title;  ?></title></h3>
-<h4 style="position: absolute;opacity: 0;"><?php echo $title;  ?></title></h4>
-<h5 style="position: absolute;opacity: 0;"><?php echo $title;  ?></title></h5 >
 <nav id="top">
   <div class="container">
     <div id="top-links" class="nav pull-right">

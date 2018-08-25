@@ -1,6 +1,17 @@
 <div class="panel panel-default">
   <div class="panel-heading"><?php echo $heading_title; ?></div>
   <div class="list-group">
+    <div class="list-group-item">
+      <select id="input-sort" class="form-control" onchange="location = this.value;">
+        <?php foreach ($sorts as $sorts) { ?>
+        <?php if ($sorts['value'] == $sort . '-' . $order) { ?>
+        <option value="<?php echo $sorts['href']; ?>" selected="selected"><?php echo $sorts['text']; ?></option>
+        <?php } else { ?>
+        <option value="<?php echo $sorts['href']; ?>"><?php echo $sorts['text']; ?></option>
+        <?php } ?>
+        <?php } ?>
+      </select>
+    </div>
     <?php foreach ($name_filter as $name => $value) { ?>
     <a class="list-group-item"><?php echo $name ?></a>
 
