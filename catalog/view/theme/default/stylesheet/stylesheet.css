@@ -895,6 +895,11 @@ h2.price {
 .mobile-box-filter {
 	display: flex;
 	justify-content: center;
+	z-index:  12;
+}
+.mobile-box-filter.close-filter {
+    justify-content: flex-end;
+    margin-top:  -41px;
 }
 .mobile-filter {
 	border: 1px solid #ddd;
@@ -905,6 +910,14 @@ h2.price {
 	width: 50%;
 	transition: all .5s ease-in-out;
 	top: 0;
+}
+.close-filter .mobile-filter {
+    background: #01796e;
+    letter-spacing: 5px;
+    display: flex;
+    justify-content:  center;
+    align-items: center;
+    text-transform: uppercase;
 }
 .mobile-filter.scroll {
 	position: fixed;
@@ -927,13 +940,17 @@ h2.price {
 	#column-left.show {
 		display: flex !important;
 		justify-content:center;
-		top: 40px;
+		top: 20px;
 		left: 0;
 		opacity: 1;
 		overflow-y: scroll;
 	}
 }
-
+@media screen and (max-width: 425px) {
+	#column-left {
+		max-height: calc(100vh - 40px);
+	}
+}
 .mobile-filter.scroll:hover,
 .mobile-filter.scroll:focus,
 .mobile-filter.scroll:active {
