@@ -2,15 +2,33 @@
   <div class="panel-heading"><?php echo $heading_title; ?></div>
   <div class="list-group">
     <div class="list-group-item">
-      <select id="input-sort" class="form-control" onchange="location = this.value;">
-        <?php foreach ($sorts as $sorts) { ?>
-        <?php if ($sorts['value'] == $sort . '-' . $order) { ?>
-        <option value="<?php echo $sorts['href']; ?>" selected="selected"><?php echo $sorts['text']; ?></option>
-        <?php } else { ?>
-        <option value="<?php echo $sorts['href']; ?>"><?php echo $sorts['text']; ?></option>
-        <?php } ?>
-        <?php } ?>
-      </select>
+      <div class="form-group input-group input-group-sm">
+        <label class="input-group-addon" for="input-sort"><?php echo $text_sort; ?></label>
+        <select id="input-sort" class="form-control" onchange="location = this.value;">
+          <?php foreach ($sorts as $sorts) { ?>
+          <?php if ($sorts['value'] == $sort . '-' . $order) { ?>
+          <option value="<?php echo $sorts['href']; ?>" selected="selected"><?php echo $sorts['text']; ?></option>
+          <?php } else { ?>
+          <option value="<?php echo $sorts['href']; ?>"><?php echo $sorts['text']; ?></option>
+          <?php } ?>
+          <?php } ?>
+        </select>
+      </div>
+    </div>
+    <div class="list-group-item">
+        <div class="input-group input-group-sm">
+          <label class="input-group-addon" for="input-limit"><?php echo $text_limit; ?></label>
+          <select id="input-limit" class="form-control" onchange="location = this.value;">
+            <?php foreach ($limits as $limits) { ?>
+            <?php if ($limits['value'] == $limit) { ?>
+            <option value="<?php echo $limits['href']; ?>" selected="selected"><?php echo $limits['text']; ?></option>
+            <?php } else { ?>
+            <option value="<?php echo $limits['href']; ?>"><?php echo $limits['text']; ?></option>
+            <?php } ?>
+            <?php } ?>
+          </select>
+        </div>
+      </div>
     </div>
     <?php foreach ($name_filter as $name => $value) { ?>
     <a class="list-group-item"><?php echo $name ?></a>
@@ -18,16 +36,38 @@
     <div class="list-group-item">
       <?php if($name === 'price'):?>
         <? foreach($value as $name) :?>
-
-          <label class="form-inline price" for=""><?= $name['name'];?> <input class="form-control" type="number"></label>
-
-        <? endforeach;?>
-      <?php else :?>
-      <select name="<?php echo $name ?>" class="form-control filter">
-        <option value="">Выберите</option>
+            <label class="form-inline price"><?= $name['name'];?> <input class="form-control" type="number"></label>
+      <? endforeach;?>
+      <?php elseif($name === 'size') :?>
+      <select name="<?php echo $name ?>" class="form-control filter" onchange="location = this.value;">
+        <?php
+         $text = preg_replace('/('. $name .')=\w+.*?&/i','',$url);
+        ?>
+        <option value="<?= $action.$text?>">Выберите</option>
         <? foreach($value as $name) :?>
 
-          <option value="<?= $name['name'];?>"><?= $name['name'];?></option>
+            <? if($name['name'] === $_GET['size']):?>
+              <option value="<?= $name['val'];?>" selected="true"><?= $name['name'];?></option>
+            <? else :?>
+              <option value="<?= $name['val'];?>"><?= $name['name'];?></option>
+            <? endif;?>
+
+        <? endforeach;?>
+      </select>
+      <? else :?>
+
+      <select name="<?php echo $name ?>" class="form-control filter" onchange="location = this.value;">
+        <?php
+         $text = preg_replace('/('. $name .')=\w+.*?&/i','',$url);
+        ?>
+        <option value="<?= $action.$text?>">Выберите</option>
+        <? foreach($value as $name) :?>
+
+            <? if($name['name'] == $_GET['brand']):?>
+              <option value="<?= $name['val'];?>" selected="true"><?= $name['name'];?></option>
+            <? else :?>
+              <option value="<?= $name['val'];?>"><?= $name['name'];?></option>
+            <? endif;?>
 
         <? endforeach;?>
       </select>
@@ -35,53 +75,35 @@
     </div>
     <?php } ?>
   </div>
-  <div class="panel-footer text-right">
-    <button type="button" id="button-filter" class="btn btn-primary"><?php echo $button_filter; ?></button>
-  </div>
-</div>
 <script type="text/javascript"><!--
-    if('<?= $get["brand"];?>'){
-       $('select.filter[name="brand"]').find('option[value="<?= $get["brand"];?>"]').attr('selected','selected');
-    }
-    if('<?= $get["size"];?>'){
-        $('select.filter[name="size"]').find('option[value="<?= $get["size"];?>"]').attr('selected','selected');
-    }
-    if('<?= $get["min"];?>'){
-        $('.price:first-child input').val('<?= $get["min"];?>');
-    }
-    if('<?= $get["max"];?>'){
-        $('.price:last-child input').val('<?= $get["max"];?>');
-    }
+    var url = '<?= $url;?>';
+    var min = url.replace(/min=.*?&/, '');
+    var max = url.replace(/max=.*?&/, '');
+    console.log(min);
+    console.log(max);
 
-    filter = ['','','',''];
+    if ('<?= $_GET["min"]?>')
+        $('.price:first-child input').val('<?= $_GET["min"]?>');
 
-
-    $('select.filter').change(function (event) {
-        event.preventDefault();
-        var n = $(this).attr('name');
-        if (n === 'size'){
-            filter.splice(1,1,n+'='+$(this).val());
-        }else {
-            filter.splice(0,1,n+'='+$(this).val());
-        }
-    });
+    if ('<?= $_GET["max"]?>')
+        $('.price:last-child input').val('<?= $_GET["max"]?>');
 
     $('.price:first-child input').keyup(function () {
-        filter.splice(2,1,'min='+$(this).val());
+        var val = '<?= $action;?>'+ min +'&min='+$(this).val()+'&';
+        setTimeout(function () {
+            location = val;
+        },1000);
     });
 
     $('.price:last-child input').keyup(function () {
-        filter.splice(3,1,'max='+$(this).val());
+        var val = '<?= $action;?>'+ max +'&max='+$(this).val()+'&';
+        setTimeout(function () {
+            location = val;
+        },1000);
     });
 
 
-    $('#button-filter').on('click', function() {
-        location = '<?php echo $action; ?> &' + filter.join('&');
-    });
 
-    if($(window).width > 640) {
-        $('#column-left').addClass('modal');
-    }
 
 
 //--></script>
