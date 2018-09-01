@@ -1,5 +1,8 @@
 <div class="panel panel-default">
   <div class="panel-heading"><?php echo $heading_title; ?></div>
+  <div class="hidden-lg hidden-md col-sm-12 text-center mobile-box-filter close-filter">
+    <button class="mobile-filter"><i class="fa fa-times-circle" aria-hidden="true"></i> закрыть</button>
+  </div>
   <div class="list-group">
     <div class="list-group-item">
       <div class="form-group input-group input-group-sm">
