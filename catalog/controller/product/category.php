@@ -70,29 +70,6 @@ class ControllerProductCategory extends Controller {
 		if (isset($this->request->get['path'])) {
 			$url = '';
 
-			if (isset($this->request->get['sort'])) {
-				$url .= '&sort=' . $this->request->get['sort'];
-			}
-
-			if (isset($this->request->get['order'])) {
-				$url .= '&order=' . $this->request->get['order'];
-			}
-
-			if (isset($this->request->get['limit'])) {
-				$url .= '&limit=' . $this->request->get['limit'];
-			}
-            if (isset($this->request->get['brand'])) {
-                $url .= $this->request->get['brand'];
-            }
-            if (isset($this->request->get['size'])) {
-                $url .= $this->request->get['size'];
-            }
-            if (isset($this->request->get['min'])) {
-                $url .= $this->request->get['min'];
-            }
-            if (isset($this->request->get['max'])) {
-                $url .= $this->request->get['max'];
-            }
 
 			$path = '';
 
@@ -204,7 +181,6 @@ class ControllerProductCategory extends Controller {
                 $url .= '&max='. $this->request->get['max'];
             }
 
-
 			$data['categories'] = array();
 
 			$results = $this->model_catalog_category->getCategories($category_id);
@@ -289,123 +265,6 @@ class ControllerProductCategory extends Controller {
 
 			}
 
-			$url = '';
-
-			if (isset($this->request->get['filter'])) {
-				$url .= '&filter=' . $this->request->get['filter'];
-			}
-
-			if (isset($this->request->get['limit'])) {
-				$url .= '&limit=' . $this->request->get['limit'];
-			}
-
-            if (isset($this->request->get['brand'])) {
-                $url .= '&brand=' . $this->request->get['brand'];
-            }
-            if (isset($this->request->get['size'])) {
-                $url .= '&size='. $this->request->get['size'];
-            }
-            if (isset($this->request->get['min'])) {
-                $url .= '&min='. $this->request->get['min'];
-            }
-            if (isset($this->request->get['max'])) {
-                $url .= '&max='. $this->request->get['max'];
-            }
-
-			$data['sorts'] = array();
-
-			$data['sorts'][] = array(
-				'text'  => $this->language->get('text_default'),
-				'value' => 'p.sort_order-ASC',
-				'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=p.sort_order&order=ASC' . $url)
-			);
-
-			$data['sorts'][] = array(
-				'text'  => $this->language->get('text_price_asc'),
-				'value' => 'p.price-ASC',
-				'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=p.price&order=ASC' . $url)
-			);
-
-			$data['sorts'][] = array(
-				'text'  => $this->language->get('text_price_desc'),
-				'value' => 'p.price-DESC',
-				'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=p.price&order=DESC' . $url)
-			);
-
-
-			$url = '';
-
-			if (isset($this->request->get['filter'])) {
-				$url .= '&filter=' . $this->request->get['filter'];
-			}
-
-			if (isset($this->request->get['sort'])) {
-				$url .= '&sort=' . $this->request->get['sort'];
-			}
-
-			if (isset($this->request->get['order'])) {
-				$url .= '&order=' . $this->request->get['order'];
-			}
-            if (isset($this->request->get['brand'])) {
-                $url .= '&brand=' . $this->request->get['brand'];
-            }
-            if (isset($this->request->get['size'])) {
-                $url .= '&size='. $this->request->get['size'];
-            }
-            if (isset($this->request->get['min'])) {
-                $url .= '&min='. $this->request->get['min'];
-            }
-            if (isset($this->request->get['max'])) {
-                $url .= '&max='. $this->request->get['max'];
-            }
-
-			$data['limits'] = array();
-
-			$limits = array_unique(array($this->config->get($this->config->get('config_theme') . '_product_limit'), 25, 50, 75, 100));
-
-			sort($limits);
-
-			foreach($limits as $value) {
-				$data['limits'][] = array(
-					'text'  => $value,
-					'value' => $value,
-					'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . $url . '&limit=' . $value)
-				);
-			}
-
-			$url = '';
-
-			if (isset($this->request->get['filter'])) {
-				$url .= '&filter=' . $this->request->get['filter'];
-			}
-
-			if (isset($this->request->get['sort'])) {
-				$url .= '&sort=' . $this->request->get['sort'];
-			}
-
-			if (isset($this->request->get['order'])) {
-				$url .= '&order=' . $this->request->get['order'];
-			}
-
-			if (isset($this->request->get['limit'])) {
-				$url .= '&limit=' . $this->request->get['limit'];
-			}
-
-            if (isset($this->request->get['brand'])) {
-                $url .= '&brand=' . $this->request->get['brand'];
-            }
-
-            if (isset($this->request->get['size'])) {
-                $url .= '&size='. $this->request->get['size'];
-            }
-
-            if (isset($this->request->get['min'])) {
-                $url .= '&min='. $this->request->get['min'];
-            }
-            
-            if (isset($this->request->get['max'])) {
-                $url .= '&max='. $this->request->get['max'];
-            }
 
 			$pagination = new Pagination();
 			$pagination->total = $product_total;
