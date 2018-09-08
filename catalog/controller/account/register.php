@@ -105,11 +105,11 @@ class ControllerAccountRegister extends Controller {
 			$data['error_firstname'] = '';
 		}
 
-//		if (isset($this->error['lastname'])) {
-//			$data['error_lastname'] = $this->error['lastname'];
-//		} else {
-//			$data['error_lastname'] = '';
-//		}
+		if (isset($this->error['lastname'])) {
+			$data['error_lastname'] = $this->error['lastname'];
+		} else {
+			$data['error_lastname'] = '';
+		}
 
 		if (isset($this->error['email'])) {
 			$data['error_email'] = $this->error['email'];
@@ -117,47 +117,47 @@ class ControllerAccountRegister extends Controller {
 			$data['error_email'] = '';
 		}
 
-//		if (isset($this->error['telephone'])) {
-//			$data['error_telephone'] = $this->error['telephone'];
-//		} else {
-//			$data['error_telephone'] = '';
-//		}
+		if (isset($this->error['telephone'])) {
+			$data['error_telephone'] = $this->error['telephone'];
+		} else {
+			$data['error_telephone'] = '';
+		}
 
-//		if (isset($this->error['address_1'])) {
-//			$data['error_address_1'] = $this->error['address_1'];
-//		} else {
-//			$data['error_address_1'] = '';
-//		}
-//
-//		if (isset($this->error['city'])) {
-//			$data['error_city'] = $this->error['city'];
-//		} else {
-//			$data['error_city'] = '';
-//		}
-//
-//		if (isset($this->error['postcode'])) {
-//			$data['error_postcode'] = $this->error['postcode'];
-//		} else {
-//			$data['error_postcode'] = '';
-//		}
-//
-//		if (isset($this->error['country'])) {
-//			$data['error_country'] = $this->error['country'];
-//		} else {
-//			$data['error_country'] = '';
-//		}
-//
-//		if (isset($this->error['zone'])) {
-//			$data['error_zone'] = $this->error['zone'];
-//		} else {
-//			$data['error_zone'] = '';
-//		}
-//
-//		if (isset($this->error['custom_field'])) {
-//			$data['error_custom_field'] = $this->error['custom_field'];
-//		} else {
-//			$data['error_custom_field'] = array();
-//		}
+		if (isset($this->error['address_1'])) {
+			$data['error_address_1'] = $this->error['address_1'];
+		} else {
+			$data['error_address_1'] = '';
+		}
+
+		if (isset($this->error['city'])) {
+			$data['error_city'] = $this->error['city'];
+		} else {
+			$data['error_city'] = '';
+		}
+
+		if (isset($this->error['postcode'])) {
+			$data['error_postcode'] = $this->error['postcode'];
+		} else {
+			$data['error_postcode'] = '';
+		}
+
+		if (isset($this->error['country'])) {
+			$data['error_country'] = $this->error['country'];
+		} else {
+			$data['error_country'] = '';
+		}
+
+		if (isset($this->error['zone'])) {
+			$data['error_zone'] = $this->error['zone'];
+		} else {
+			$data['error_zone'] = '';
+		}
+
+		if (isset($this->error['custom_field'])) {
+			$data['error_custom_field'] = $this->error['custom_field'];
+		} else {
+			$data['error_custom_field'] = array();
+		}
 
 		if (isset($this->error['password'])) {
 			$data['error_password'] = $this->error['password'];

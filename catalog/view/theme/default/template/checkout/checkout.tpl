@@ -39,41 +39,41 @@
           </div>
         </div>
         <?php } else { ?>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title"><?php echo $text_checkout_payment_address; ?></h4>
-          </div>
-          <div class="panel-collapse collapse" id="collapse-payment-address">
-            <div class="panel-body"></div>
-          </div>
-        </div>
-        <?php } ?>
-        <?php if ($shipping_required) { ?>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title"><?php echo $text_checkout_shipping_address; ?></h4>
-          </div>
-          <div class="panel-collapse collapse" id="collapse-shipping-address">
-            <div class="panel-body"></div>
-          </div>
-        </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title"><?php echo $text_checkout_shipping_method; ?></h4>
-          </div>
-          <div class="panel-collapse collapse" id="collapse-shipping-method">
-            <div class="panel-body"></div>
-          </div>
-        </div>
-        <?php } ?>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title"><?php echo $text_checkout_payment_method; ?></h4>
-          </div>
-          <div class="panel-collapse collapse" id="collapse-payment-method">
-            <div class="panel-body"></div>
-          </div>
-        </div>
+        <!--<div class="panel panel-default">-->
+          <!--<div class="panel-heading">-->
+            <!--<h4 class="panel-title"><?php echo $text_checkout_payment_address; ?></h4>-->
+          <!--</div>-->
+          <!--<div class="panel-collapse collapse" id="collapse-payment-address">-->
+            <!--<div class="panel-body"></div>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<?php } ?>-->
+        <!--<?php if ($shipping_required) { ?>-->
+        <!--<div class="panel panel-default">-->
+          <!--<div class="panel-heading">-->
+            <!--<h4 class="panel-title"><?php echo $text_checkout_shipping_address; ?></h4>-->
+          <!--</div>-->
+          <!--<div class="panel-collapse collapse" id="collapse-shipping-address">-->
+            <!--<div class="panel-body"></div>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div class="panel panel-default">-->
+          <!--<div class="panel-heading">-->
+            <!--<h4 class="panel-title"><?php echo $text_checkout_shipping_method; ?></h4>-->
+          <!--</div>-->
+          <!--<div class="panel-collapse collapse" id="collapse-shipping-method">-->
+            <!--<div class="panel-body"></div>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<?php } ?>-->
+        <!--<div class="panel panel-default">-->
+          <!--<div class="panel-heading">-->
+            <!--<h4 class="panel-title"><?php echo $text_checkout_payment_method; ?></h4>-->
+          <!--</div>-->
+          <!--<div class="panel-collapse collapse" id="collapse-payment-method">-->
+            <!--<div class="panel-body"></div>-->
+          <!--</div>-->
+        <!--</div>-->
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title"><?php echo $text_checkout_confirm; ?></h4>

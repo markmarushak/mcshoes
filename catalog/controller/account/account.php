@@ -42,9 +42,9 @@ class ControllerAccountAccount extends Controller {
 		$data['text_credit_card'] = $this->language->get('text_credit_card');
 		$data['text_wishlist'] = $this->language->get('text_wishlist');
 		$data['text_order'] = $this->language->get('text_order');
-		$data['text_download'] = $this->language->get('text_download');
-		$data['text_reward'] = $this->language->get('text_reward');
-		$data['text_return'] = $this->language->get('text_return');
+//		$data['text_download'] = $this->language->get('text_download');
+//		$data['text_reward'] = $this->language->get('text_reward');
+//		$data['text_return'] = $this->language->get('text_return');
 		$data['text_transaction'] = $this->language->get('text_transaction');
 		$data['text_newsletter'] = $this->language->get('text_newsletter');
 		$data['text_recurring'] = $this->language->get('text_recurring');
