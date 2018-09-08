@@ -34,7 +34,14 @@
       </div>
     </div>
     <?php foreach ($name_filter as $name => $value) { ?>
-    <a class="list-group-item"><?php echo $name ?></a>
+    <a class="list-group-item">
+      <?php if($name == 'brand')
+      {echo 'Бренд';}
+      elseif($name=='size')
+      {echo 'Размер';}
+      elseif($name=='price')
+      {echo 'Цена';} ?>
+    </a>
 
     <div class="list-group-item">
       <?php if($name === 'price'):?>
