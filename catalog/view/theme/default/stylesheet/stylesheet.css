@@ -603,6 +603,7 @@ footer h5 {
 	text-align: center;
 	position: relative;
 	width:  100%;
+	min-height:  165px;
 }
 .product-list .product-thumb .caption {
 	margin-left: 230px;
@@ -695,7 +696,7 @@ h2.price {
 }
 
 .product-thumb .button-group button + button {
-	width: 20%;
+	width: 40%;
 	border-left: 1px solid #ddd;
 }
 .product-thumb .button-group button:hover {
@@ -711,7 +712,7 @@ h2.price {
 }
 @media (max-width: 767px) {
 	.product-thumb .button-group button, .product-thumb .button-group button + button {
-		width: 33.33%;
+		width: 50%;
 	}
 }
 .thumbnails {
@@ -987,4 +988,45 @@ h2.price {
 #column-left .panel-heading {
 	background: #009688;
 	color: #fff;
+}
+.jumbotron-m {
+	display: flex;
+	align-items:center;
+	justify-content:center;
+	height: 80px;
+}
+.btn-full {
+	width: 100%;
+	height: 100%;
+}
+.btn-static {
+	background: #0e898e;
+	color: #fff;
+	font-size: 1.4rem;
+	text-transform: uppercase;
+	border: 1px solid;
+	text-decoration: none;
+
+}
+.btn-static:hover {
+	background: #1fa3a7;
+	color: #fff;
+	text-decoration: none;
+}
+.btn-m {
+	display: flex;
+	align-items:center;
+	justify-content: center;
+	transition: all .5s;
+	flex-wrap: wrap;
+}
+/*
+	a > i
+	a i
+*/
+.btn-m > i {
+	font-size: 170%;
+	display: block;
+	width: 100%;
+	text-align: center;
 }
