@@ -597,14 +597,13 @@ footer h5 {
 	border-bottom: 1px solid;
 	display: inline-block;
 	margin-bottom:  3px;
-	padding-bottom:  5px;
 }
 .product-thumb .caption {
 	padding: 20px 0;
 	text-align: center;
 	position: relative;
 	width:  100%;
-	min-height: 115px;
+	min-height:  165px;
 }
 .product-list .product-thumb .caption {
 	margin-left: 230px;
@@ -646,14 +645,13 @@ h2.price {
 	margin: 0;
 }
 .product-thumb .price {
-	color: #000;
-	font-size: 20px;
+	color: #444;
+	font-size: 15px;
 	letter-spacing:  3px;
 	display: block;
 	border-top: 1px solid;
 	width: 85%;
 	margin: 0 auto;
-	padding-top:  10px;
 }
 .product-thumb .price-new {
 	font-weight: 600;
