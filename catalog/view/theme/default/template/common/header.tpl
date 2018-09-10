@@ -49,7 +49,7 @@
 <?php } ?>
 </head>
 <body class="<?php echo $class; ?>">
-  <h1>мс шуз - для всех</h1>
+  <h1 style="opacity: 0;position: absolute;top: 0;"><?php echo $title;  ?></h1>
 <nav id="top">
   <div class="container">
     <div id="top-links" class="nav pull-right">
