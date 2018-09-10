@@ -17,6 +17,7 @@
 <?php if ($keywords) { ?>
 <meta name="keywords" content= "<?php echo $keywords; ?>" />
 <?php } ?>
+<meta rel="canonical">
 <meta property="og:title" content="<?php echo $title; ?>" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="<?php echo $og_url; ?>" />
@@ -48,6 +49,7 @@
 <?php } ?>
 </head>
 <body class="<?php echo $class; ?>">
+  <h1>мс шуз - для всех</h1>
 <nav id="top">
   <div class="container">
     <div id="top-links" class="nav pull-right">
