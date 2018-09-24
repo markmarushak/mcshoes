@@ -9,7 +9,7 @@
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
     <div id="content" class="<?php echo $class; ?>">
-      <? if($categories) :?>
+      <? if(!$categories) :?>
       <div class="group_category">
         <? foreach($categories as $category) :?>
 
