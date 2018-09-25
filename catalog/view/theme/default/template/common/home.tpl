@@ -10,7 +10,7 @@
     <?php } ?>
     <div id="content" class="<?php echo $class; ?>">
       <? if($categories) :?>
-      <div class="group_category hidden-sm">
+      <div class="group_category hidden-xs">
         <? foreach($categories as $category) :?>
 
         <div class="category">
