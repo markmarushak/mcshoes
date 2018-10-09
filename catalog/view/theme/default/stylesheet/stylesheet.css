@@ -714,7 +714,7 @@ h2.price {
 		border-left: none;
 	}
 }
-.product-thumb .button-group button {
+.product-thumb .button-group a {
 	width: 60%;
 	border: none;
 	display: inline-block;
@@ -729,7 +729,7 @@ h2.price {
 	transition: all .5s;
 }
 
-.product-thumb .button-group button + button {
+.product-thumb .button-group a + a {
 	width: 40%;
 	border-left: 1px solid #ddd;
 }
