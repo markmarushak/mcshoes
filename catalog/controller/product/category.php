@@ -9,6 +9,8 @@ class ControllerProductCategory extends Controller {
 
 		$this->load->model('tool/image');
 
+		$this->load->model('tool/ajax');
+
 		if (isset($this->request->get['filter'])) {
 			$filter = $this->request->get['filter'];
 		} else {
@@ -215,6 +217,9 @@ class ControllerProductCategory extends Controller {
 			$product_total = $this->model_catalog_product->getTotalProducts($filter_data);
 
 			$results = $this->model_catalog_product->getProducts($filter_data);
+
+//			$this->load->controller('ajax/order');
+//			$data['alltest'] = $this->model_tool_ajax->getArticle(52);
 
 			foreach ($results as $result) {
 				if ($result['image']) {

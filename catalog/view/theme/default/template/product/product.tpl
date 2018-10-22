@@ -227,7 +227,7 @@
           </div>
           <div class="col-sm-7">
             <ul class="nav nav-tabs">
-              <!--<li class="active"><a href="#tab-description" data-toggle="tab"><?php echo $tab_description; ?></a></li>-->
+              <li class="active"><a href="#tab-description" data-toggle="tab"><?php echo $tab_description; ?></a></li>
               <?php if ($attribute_groups) { ?>
               <li class="active"><a href="#tab-specification" data-toggle="tab"><?php echo $tab_attribute; ?></a></li>
               <?php } ?>
@@ -236,7 +236,7 @@
               <?php } ?>
             </ul>
             <div class="tab-content">
-              <!--<div class="tab-pane active" id="tab-description"><?php echo $description; ?></div>-->
+              <div class="tab-pane active" id="tab-description"><?php echo $description; ?></div>
               <?php if ($attribute_groups) { ?>
               <div class="tab-pane active" id="tab-specification">
                 <table class="table table-bordered">
